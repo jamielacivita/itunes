@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Itunes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/> 
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+  </head>
+  <body>
+      <form class="form-inline" onsubmit="itunesCtrl.getMusic(event)">
+        <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
+        <div class="form-group">
+          <input type="text" class="form-control" name="artist" placeholder="Artist Name"/>
+          <button type="submit" class="btn btn-primary" id="get-music-button">Get Music</button>
+        </div>
+      </form>
+      <div id="songs">
+        
+      </div>
+  </body>
+</html>
