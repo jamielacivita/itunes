@@ -1,11 +1,7 @@
-#songsDiv {margin-left: 40px;}
+
 
 .artist {
 margin-bottom: 5px;
-}
-
-.collect {margin-left:40px;
-font-size: 40px;
 }
 
 .collection {background-color: lightgoldenrodyellow;
@@ -13,22 +9,6 @@ border-top: 1px solid black;
 }
 
 .track {background-color: lightgoldenrodyellow;
-}
-
-.title {
-display:flex;    
-margin-left:150px;
-padding-top:5px;
-/*border: 1px solid red;*/
-}
-
-#songTitle{   
-width:300px;
-/*border: 1px solid blue;*/
-}
-
-.art {margin-left: 20px;
-margin-top: 10px;
 }
 
 .form-group{margin-top:23px;}
