@@ -5,6 +5,25 @@ function ItunesController(){
     e.preventDefault();
     var artist = e.target.artist.value;
     itunesService.getMusicByArtist(artist).then(drawSongs);
+}
+
+this.playSong = function(URL)
+{
+    var songURL = URL
+//alert("in Play song")
+if (typeof(x) != 'undefined')
+  {
+      console.log(songURL,x.src)
+      if (songURL == x.src)
+      {   console.log("should pause")
+          x.pause()
+        return false}
+      else
+      {x.load()}
+    }
+x = document.createElement("AUDIO");
+x.src = songURL
+x.play()
   }
 
   function getSongElement(songObject,element)
@@ -73,10 +92,11 @@ function makeTable(songList)
         arr_masterTable.push(arr_row)
 
     }
-        console.info("Length of the master table is: ",arr_masterTable.length)
+        //console.info("Length of the master table is: ",arr_masterTable.length)
         return arr_masterTable.sort();
 
 }
+
 
 
 
@@ -111,34 +131,60 @@ function readMasterTable(arr_master)
         //console.log("----New Artist---")
         //console.log("Artist: ", artist)
         //console.log("------------------")
-        template += `<div class = "artist">${artist}</div>`
+        //template += `<div class = "artist">${artist}</div>`
+        template += `<div class="row artist">`
+        template += `<div class="col-md-1"></div>`
+        template += `<div class="col-md-11 h1">${artist}</div>`
+        template += `</div>`
         }
-
 
         if (collect != prev_collect)
         {
         //console.log("Collection: ", collect)
-        template += `<div class = "collect">
-                <span class = "art">
-                <img src ='${songArt}'>
-                </span>
-                ${collect}
-        </div>`
+
+        // template += `<div class = "collect">
+        //         <span class = "art">
+        //         <img src ='${songArt}'>
+        //         </span>
+        //         ${collect}
+        // </div>`
+
+
+        template += `<div class="row collection">`
+        template += `<div class="col-md-1 h2"></div>`
+        template += `<div class="col-md-1"><img src="${songArt}"></div>`
+        template += `<div class="col-md-4 h2">${collect}</div>`
+        template += `<div class="col-md-1 h2">${price}</div>`
+        template += `</div>`
+
+
         }
 
-         console.log("songPreview",songPreview)
+         //console.log("songPreview",songPreview)
 
         //console.log("Title: ", title)
-        template += `<div class = "title">
-            <div id="songTitle">
-                ${title} for ${price}
-            </div>
-        <audio controls name="media">
-        <source src='${songPreview}' type = 'audio/mp4'>
-        </audio>
-        </div>`
+        // template += `<div class = "title">
+        //     <div id="songTitle">
+        //         ${title} for ${price}
+        //     </div>
+        // <audio controls name="media">
+        // <source src='${songPreview}' type = 'audio/mp4'>
+        // </audio>
+        // </div>`
         //console.log("Price: ", price)
         //console.log("--------------------")
+
+        template += `<div class="row track">`
+        template += `<div class="col-md-2"></div>`
+        // template += `<div class="col-md-3 h3">${title}</div>`
+        template += `<div class="col-md-3 h3" onclick="itunesCtrl.playSong('${songPreview}')">${title}</div>`    
+        template += `<div class="col-md-2 h3">`
+        //template += `<audio controls name="media">`
+        //template += `<source src='${songPreview}' type = 'audio/mp4'>`
+        //template += `</audio>`
+        template += `</div>`
+        template += `</div>`
+        template += `</div>`
 
     }
         return template;
@@ -180,14 +226,17 @@ function readMasterTable(arr_master)
     var topRowToAdd = createRowElement(a,t,c,p)
 
     //append this row to the DOM
-    sb = document.getElementById("songBin")
+    //sb = document.getElementById("songBin")
     //sb.appendChild(topRowToAdd)
 
 
 masterTable = makeTable(songList)
 temp = readMasterTable(masterTable)
 //console.log(temp)
-var songsDiv = document.getElementById("songsDiv")
+// var songsDiv = document.getElementById("songsDiv")
+// songsDiv.innerHTML = temp;
+
+var songsDiv = document.getElementById("songBin")
 songsDiv.innerHTML = temp;
 
 
@@ -212,8 +261,7 @@ var itunesCtrl = new ItunesController()
 //only can load one group on a reload?
 
 //TODO
-//Pretify with bootstrap - use 12 col // use two components
 //Click on title - 30 secon preview
 //Click on new title will start new 30 sec.
-//Add titlebar with search area and itunes logo.
+
 
