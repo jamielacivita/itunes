@@ -1,0 +1,17 @@
+
+
+
+
+    
+        // var A = createColElement("firstColumn");
+        // var B = createColElement("secondColumn");
+        // var C = createColElement("thirdColumn");
+        // var D = createColElement("fourthColumn");
+
+        // outrow = createRowElement(A,B,C,D);
+        // sb = document.getElementById("songBin")
+        // sb.appendChild(outrow)
+
+
+
+

@@ -1,0 +1,28 @@
+#songsDiv {margin-left: 40px;}
+
+.artist {background-color: cornflowerblue;
+font-size: 60px;
+margin-bottom: 5px;
+}
+
+.collect {margin-left:40px;
+font-size: 40px;
+}
+
+.title {
+display:flex;    
+margin-left:150px;
+padding-top:5px;
+/*border: 1px solid red;*/
+}
+
+#songTitle{   
+width:300px;
+/*border: 1px solid blue;*/
+}
+
+.art {margin-left: 20px;
+margin-top: 10px;
+}
+
+.form-group{margin-top:23px;}

@@ -1,19 +1,45 @@
 <html>
-  <head>
+
+<head>
     <title>Itunes</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-  </head>
-  <body>
-      <form class="form-inline" onsubmit="itunesCtrl.getMusic(event)">
-        <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
-        <div class="form-group">
-          <input type="text" class="form-control" name="artist" placeholder="Artist Name"/>
-          <button type="submit" class="btn btn-primary" id="get-music-button">Get Music</button>
-        </div>
-      </form>
-      <div id="songs">
-        
-      </div>
-  </body>
+</head>
+
+<body>
+
+<nav>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><img src="http://vignette1.wikia.nocookie.net/logopedia/images/0/0a/ITunes_logo_2010b.png/revision/latest/scale-to-width-down/80?cb=20100908161433"></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active">
+          <a href="#">
+          
+<form class="form-inline" onsubmit="itunesCtrl.getMusic(event)">
+<!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
+<div class="form-group">
+    <input type="text" class="form-control" name="artist" placeholder="Artist Name" />
+    <button type="submit" class="btn btn-primary" id="get-music-button">Get Music</button>
+</div>
+</form>
+          
+    </a></li>
+    </ul>
+  </div>
+<nav>
+
+
+<div id="songs">
+<div id="songBin" class="container"></div>
+</div>
+
+<div id="songsDiv"></div>
+
+<script src="itunes-service.js"></script>
+<script src="app.js"></script>
+</body>
+
 </html>
